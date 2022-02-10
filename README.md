@@ -7,3 +7,10 @@ dependencies:
 		colour
 		numpy
 
+tested on:
+	Windows 10
+
+expected to work on:
+	Linux
+	MacOS
+	(don't forget to change line endings!)
