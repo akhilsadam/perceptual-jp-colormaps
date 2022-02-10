@@ -4,7 +4,7 @@ A collection of perceptually uniform colormaps with traditional-ish Japanese col
 
 dependencies:
 	Python3:
-		colour
+		colour-science
 		numpy
 
 tested on:
