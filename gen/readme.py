@@ -10,7 +10,7 @@ A collection of perceptually uniform colormaps with traditional-ish Japanese col
 Additions are welcomed.  
 
 Why perceptually uniform colormaps? Can you not just use default Matplotlib colormaps?  
-![]("https://i.stack.imgur.com/JcTDb.png")  
+![]('https://i.stack.imgur.com/JcTDb.png')  
 - non-perceptually uniform colormaps induce dangerous artifacts, as seen in the above image:
 The left colormap introduces new features to the data.
 - Matplotlib perceptually uniform colormaps are not visually appealing and sometimes lack enough contrast.
