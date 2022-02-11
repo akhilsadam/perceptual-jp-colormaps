@@ -9,9 +9,9 @@ readme = """
 A collection of perceptually uniform colormaps with traditional-ish Japanese colors. (Culture appropriation at its finest.)  
 Additions are welcomed.  
 
-Why perceptually uniform colormaps? Can you not just use default Matplotlib colormaps?
-- non-perceptually uniform colormaps induce dangerous artifacts, as seen in the following image:
-![]("https://i.stack.imgur.com/JcTDb.png")
+Why perceptually uniform colormaps? Can you not just use default Matplotlib colormaps?  
+![]("https://i.stack.imgur.com/JcTDb.png")  
+- non-perceptually uniform colormaps induce dangerous artifacts, as seen in the above image:
 The left colormap introduces new features to the data.
 - Matplotlib perceptually uniform colormaps are not visually appealing and sometimes lack enough contrast.
 With this package, anyone can design colormaps to fit their visual style.
