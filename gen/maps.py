@@ -72,8 +72,8 @@ cmaps = \
     # 'ete' : [],
     # 'automne' : [],
     # 'hiver' : [],
-    'water' : [mizu_iro,seiji_iro],
-    'momiji': [sakuranezumi,ginshu,azuki_iro],
+    'water' : [gunjo_iro,mizu_iro,seiji_iro],
+    'momiji': [sakuranezumi,ginshu,azuki_iro,enji_iro],
     'sky' : [kokushoku,kokimurasaki,sora_iro,aijiro],
     # inspired by cmasher (https://cmasher.readthedocs.io/)
     'sunburst' : [kokushoku,enji_iro,akabeni,tomorokoshi_iro,mashiro],
