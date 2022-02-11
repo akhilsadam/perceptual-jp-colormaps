@@ -11,28 +11,28 @@ The left colormap introduces new features to the data.
 With this package, anyone can design colormaps to fit their visual style.
 
 dependencies:  
-	Python3:  
-		colour-science  
-		numpy  
-		logging  
-		scipy  
-		json  
-		pynverse  
-		matplotlib  
+- Python3:  
+--	colour-science  
+--	numpy  
+--	logging  
+--	scipy  
+--	json  
+--	pynverse  
+--	matplotlib  
   
 tested on:  
-	Windows 10  
+- Windows 10  
   
 expected to work on:  
-	Linux  
-	MacOS  
+- Linux  
+- MacOS  
   
 run generator:   
-    `python3 gen.py` or `python3 gen.py --readme`
+- `python3 gen.py` or `python3 gen.py --readme`
 
 load colormaps:
-    add load.py and the maps/cmaps.txt to your code.
-    load.jpcm_load() will return a dictonary containing all the colormaps
+- add load.py and the maps/cmaps.txt to your code.
+- load.jpcm_load() will return a dictonary containing all the colormaps
 
 ## gallery  
 
