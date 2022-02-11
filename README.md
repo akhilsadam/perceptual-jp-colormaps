@@ -30,13 +30,8 @@ load colormaps:
 
 ## gallery  
 
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/def.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/def_segmented.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sky.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sky_segmented.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sunburst.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sunburst_segmented.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/flamingo.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/flamingo_segmented.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/tree.png?raw=true | width=100)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/tree_segmented.png?raw=true | width=100)
+<img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/def.png?raw=true width='100'>  <img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/def_segmented.png?raw=true width='100'>    
+<img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sky.png?raw=true width='100'>  <img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sky_segmented.png?raw=true width='100'>    
+<img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sunburst.png?raw=true width='100'>  <img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sunburst_segmented.png?raw=true width='100'>    
+<img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/flamingo.png?raw=true width='100'>  <img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/flamingo_segmented.png?raw=true width='100'>    
+<img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/tree.png?raw=true width='100'>  <img src='https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/tree_segmented.png?raw=true width='100'>  
