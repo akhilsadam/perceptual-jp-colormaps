@@ -133,7 +133,7 @@ def gen_cmaps(cmaps,segmented=False):
         logger.debug("Perceptual:{}".format(x))
         logger.debug("RGB:{}".format(RGB))
 
-        calculatePD(gradient, RGB, name).savefig(path+key+options+".png")
+        calculatePD(gradient, RGB, name).savefig(path+key+options+".png",bbox_inches='tight')
 
         mapdata[name] = RGB.tolist()
     with open(datafile, 'w') as file:
