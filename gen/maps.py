@@ -74,7 +74,7 @@ cmaps = \
     # 'ete' : [],
     # 'automne' : [],
     # 'hiver' : [],
-    'ice'   : [aijiro,gunjo_iro,mizu_iro,sora_iro,sabi_asagi,omeshi_onando],
+    'ice'   : [aijiro,gunjo_iro,sora_iro,mizu_iro,sabi_asagi,omeshi_onando],
     'water' : [gunjo_iro,mizu_iro,seiji_iro],
     'momiji': [sakuranezumi,ginshu,azuki_iro,enji_iro],
     'sky' : [kokushoku,kokimurasaki,sora_iro,aijiro],
