@@ -111,7 +111,7 @@ def calculatePD(gradient, RGB, name):
     ax.set_ylim(0, delta_ymax(local_derivs))
     ax.get_xaxis().set_visible(False)
     ax.margins(0.0)
-    ax.set_facecolor(aijiro)
+    ax.set_facecolor(aijiro_alpha)
     ax.set_aspect(n_keys*8/delta_ymax(local_derivs))
     return fig
 

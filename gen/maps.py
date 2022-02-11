@@ -14,7 +14,7 @@ def rgb(r,g,b,a=1):
 # list of colors (skytree white not accurate)
 # whites
 aijiro = rgb(235, 246, 247)
-aijiro_alph = rgb(235, 246, 247,0.15)
+aijiro_alpha = rgb(235, 246, 247,0.3)
 sukaitsuri_iro = rgb(220, 240, 250)
 mashiro = rgb(255, 255, 255)
 zoge_iro = rgb(255, 255, 240)
