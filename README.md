@@ -22,16 +22,16 @@ expected to work on:
 	MacOS  
   
 run generator:   
-    `python3 gen.py`
+    `python3 gen.py` or `python3 gen.py --readme`
 
 load colormaps:
     add load.py and the maps/cmaps.txt to your code.
     load.jpcm_load() will return a dictonary containing all the colormaps
 
-## gallery:  
+## gallery  
 
-![](maps/def.png | width=100) ![](maps/def_segmented.png | width=100)  
-![](maps/sky.png | width=100) ![](maps/sky_segmented.png | width=100)  
-![](maps/sunburst.png | width=100) ![](maps/sunburst_segmented.png | width=100)  
-![](maps/flamingo.png | width=100) ![](maps/flamingo_segmented.png | width=100)  
-![](maps/tree.png | width=100) ![](maps/tree_segmented.png | width=100)
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/def.png?raw=true | width=100) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/def_segmented.png?raw=true | width=100)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sky.png?raw=true | width=100) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sky_segmented.png?raw=true | width=100)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sunburst.png?raw=true | width=100) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/sunburst_segmented.png?raw=true | width=100)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/flamingo.png?raw=true | width=100) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/flamingo_segmented.png?raw=true | width=100)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/tree.png?raw=true | width=100) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/maps/tree_segmented.png?raw=true | width=100)

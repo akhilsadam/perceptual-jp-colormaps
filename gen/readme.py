@@ -1,5 +1,8 @@
 from maps import *
 readmefile = "../README.md"
+uname='akhilsadam'
+rname='perceptual-jp-colormaps'
+branch='master'
 readme = """
 # perceptual-jp-colormaps  
   
@@ -24,20 +27,21 @@ expected to work on:
 	MacOS  
   
 run generator:   
-    `python3 gen.py`
+    `python3 gen.py` or `python3 gen.py --readme`
 
 load colormaps:
     add load.py and the maps/cmaps.txt to your code.
     load.jpcm_load() will return a dictonary containing all the colormaps
 
-## gallery:  
+## gallery  
 """
 
 def generate():
     lines = []
     for key in cmaps.keys():
-        imagename = [path0+key+suffix,path0+key+segmentOPT+suffix]
-        line = "\n![]("+"{}".format(imagename[0])+" | width=100) ![]("+"{}".format(imagename[1])+" | width=100)"
+        names = [path0+key+suffix,path0+key+segmentOPT+suffix]
+        imagenames = ["https://github.com/{}/{}/blob/{}/{}?raw=true".format(uname,rname,branch,name) for name in names]
+        line = "\n![]("+"{}".format(imagenames[0])+" | width=100) ![]("+"{}".format(imagenames[1])+" | width=100)"
         lines.append(line)
     readmeHT = readme + "  ".join(lines)  
     with open(readmefile, 'w') as file:
