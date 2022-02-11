@@ -1,5 +1,9 @@
 import numpy as np
 
+segmentOPT="_segmented"
+path = "../maps/"
+suffix = ".png"
+
 def rgb(r,g,b,a=1):
     arr = np.array([r,g,b])/255
     if a != 1 :

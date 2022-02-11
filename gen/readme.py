@@ -1,4 +1,6 @@
-
+from maps import *
+readmefile = "../README.md"
+readme = """
 # perceptual-jp-colormaps  
   
 A collection of perceptually uniform colormaps with traditional-ish Japanese colors. (Culture appropriation at its finest.)  
@@ -29,9 +31,14 @@ load colormaps:
     load.jpcm_load() will return a dictonary containing all the colormaps
 
 ## gallery:  
+"""
 
-![](../maps/def.png | width=100) ![](../maps/def_segmented.png | width=100)  
-![](../maps/sky.png | width=100) ![](../maps/sky_segmented.png | width=100)  
-![](../maps/sunburst.png | width=100) ![](../maps/sunburst_segmented.png | width=100)  
-![](../maps/flamingo.png | width=100) ![](../maps/flamingo_segmented.png | width=100)  
-![](../maps/tree.png | width=100) ![](../maps/tree_segmented.png | width=100)
+def generate():
+    lines = []
+    for key in cmaps.keys():
+        imagename = [path+key+suffix,path+key+segmentOPT+suffix]
+        line = "\n![]("+"{}".format(imagename[0])+" | width=100) ![]("+"{}".format(imagename[1])+" | width=100)"
+        lines.append(line)
+    readmeHT = readme + "  ".join(lines)  
+    with open(readmefile, 'w') as file:
+        file.write(readmeHT)

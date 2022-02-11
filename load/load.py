@@ -5,10 +5,12 @@ import json as js
 datafile = "../cmaps.txt"
 rev = "_rev"
 
-with open(datafile,'r') as file:
-    mapdata = js.load(file)
+def jpcm_load():
 
-cmaps = {key: LCM(np.array(mapdata[key]),key) for key in mapdata.keys()}
-cmaps.update({key+rev: LCM(np.flip(np.array(mapdata[key]),axis=0),key+rev) for key in mapdata.keys()})
+    with open(datafile,'r') as file:
+        mapdata = js.load(file)
 
-print(cmaps)
+    jpcm_cmaps = {key: LCM(np.array(mapdata[key]),key) for key in mapdata.keys()}
+    jpcm_cmaps.update({key+rev: LCM(np.flip(np.array(mapdata[key]),axis=0),key+rev) for key in mapdata.keys()})
+
+    return jpcm_cmaps

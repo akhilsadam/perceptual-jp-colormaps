@@ -11,9 +11,9 @@ from scipy.interpolate import CubicSpline,interp1d
 from pynverse import inversefunc
 from savitzky_golay import savitzky_golay
 from maps import *
+import readme
 
 prefix = "jp-cm-"
-path = "../maps/"
 datafile = f'{path}cmaps.txt'
 discretization = 40
 
@@ -119,7 +119,7 @@ def gen_cmaps(cmaps,segmented=False):
     out:    ../maps/maps.txt
             ../maps/<name>.png
     """
-    options = "_segmented" if segmented else ""
+    options = segmentOPT if segmented else ""
 
     mapdata = {}
     for key in cmaps.keys():
@@ -142,6 +142,8 @@ def gen_cmaps(cmaps,segmented=False):
 def core():
     gen_cmaps(cmaps)
     gen_cmaps(cmaps,True)
+    if "--readme" in sys.argv:
+        readme.generate()
     # gen_cmaps(cmaps,("--segmented" in sys.argv))
 
 if __name__=='__main__':
