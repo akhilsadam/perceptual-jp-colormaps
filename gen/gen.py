@@ -109,7 +109,7 @@ def calculatePD(gradient, RGB, name):
     ax.get_xaxis().set_visible(False)
     ax.margins(0.0)
     ax.set_facecolor(aijiro)
-    ax.set_aspect(16)
+    ax.set_aspect(16*delta_ymax(local_derivs))
     return fig
 
 def gen_cmaps(cmaps,segmented=False):
