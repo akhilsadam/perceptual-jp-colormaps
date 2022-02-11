@@ -36,7 +36,7 @@ load colormaps:
 def generate():
     lines = []
     for key in cmaps.keys():
-        imagename = [path+key+suffix,path+key+segmentOPT+suffix]
+        imagename = [path0+key+suffix,path0+key+segmentOPT+suffix]
         line = "\n![]("+"{}".format(imagename[0])+" | width=100) ![]("+"{}".format(imagename[1])+" | width=100)"
         lines.append(line)
     readmeHT = readme + "  ".join(lines)  

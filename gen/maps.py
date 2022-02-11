@@ -1,7 +1,8 @@
 import numpy as np
 
 segmentOPT="_segmented"
-path = "../maps/"
+path0 = "maps/"
+path = f'../{path0}'
 suffix = ".png"
 
 def rgb(r,g,b,a=1):

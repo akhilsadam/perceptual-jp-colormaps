@@ -30,8 +30,8 @@ load colormaps:
 
 ## gallery:  
 
-![](../maps/def.png | width=100) ![](../maps/def_segmented.png | width=100)  
-![](../maps/sky.png | width=100) ![](../maps/sky_segmented.png | width=100)  
-![](../maps/sunburst.png | width=100) ![](../maps/sunburst_segmented.png | width=100)  
-![](../maps/flamingo.png | width=100) ![](../maps/flamingo_segmented.png | width=100)  
-![](../maps/tree.png | width=100) ![](../maps/tree_segmented.png | width=100)
+![](maps/def.png | width=100) ![](maps/def_segmented.png | width=100)  
+![](maps/sky.png | width=100) ![](maps/sky_segmented.png | width=100)  
+![](maps/sunburst.png | width=100) ![](maps/sunburst_segmented.png | width=100)  
+![](maps/flamingo.png | width=100) ![](maps/flamingo_segmented.png | width=100)  
+![](maps/tree.png | width=100) ![](maps/tree_segmented.png | width=100)
