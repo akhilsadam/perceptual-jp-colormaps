@@ -30,13 +30,8 @@ load colormaps:
 
 ## gallery  
 
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sunburst.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sunburst_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/flamingo.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/flamingo_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/tree.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/tree_segmented.png?raw=true)
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sunburst.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sunburst_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/flamingo.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/flamingo_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/tree.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/tree_segmented.png?raw=true)
