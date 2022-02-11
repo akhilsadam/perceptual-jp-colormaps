@@ -1,7 +1,7 @@
 
 # perceptual-jp-colormaps  
   
-A perceptually uniform colormap generator for Matplotlib equipped with traditional-ish Japanese colors.  
+A perceptually uniform colormap generator for Matplotlib equipped with traditional-ish Japanese colors to serve as a fixed color palette.   
 (Culture appropriation at its finest.) Additions are welcomed.  
 
 Why perceptually uniform colormaps? Can you not just use default Matplotlib colormaps?   
