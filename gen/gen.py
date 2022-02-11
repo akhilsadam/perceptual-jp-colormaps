@@ -81,6 +81,9 @@ def delta_ymax(values):
     return max(np.max(values)*1.1, 0)
 
 def fitD(gradient):
+    """
+    (Lifted from https://github.com/1313e/viscm/blob/master/viscm/gui.py)
+    """
     local_deltas = np.sqrt(np.sum(np.diff(gradient, axis=0)**2, axis=-1))
     local_derivs = (len(local_deltas)-1)*local_deltas
     return local_deltas,local_derivs
@@ -88,11 +91,11 @@ def fitD(gradient):
 def calculatePD(gradient, RGB, name):
     """
     Calculate and plot colormap with perceptual derivative.
-    (Lifted from https://github.com/1313e/viscm/blob/master/viscm/gui.py)
     """
+    n_keys = int(len(gradient)/discretization)
 
     fig,_ = colour.plotting.plot_multi_colour_swatches(
-        [colour.plotting.ColourSwatch(RGB=np.clip(x, 0, 1)) for x in RGB], height = 2*int(len(gradient)/discretization))
+        [colour.plotting.ColourSwatch(RGB=np.clip(x, 0, 1)) for x in RGB], height = 2*n_keys)
     
     ax = fig.add_subplot(212)
 
@@ -109,7 +112,7 @@ def calculatePD(gradient, RGB, name):
     ax.get_xaxis().set_visible(False)
     ax.margins(0.0)
     ax.set_facecolor(aijiro)
-    ax.set_aspect(16/delta_ymax(local_derivs))
+    ax.set_aspect(16/(delta_ymax(local_derivs)*n_keys))
     return fig
 
 def gen_cmaps(cmaps,segmented=False):
