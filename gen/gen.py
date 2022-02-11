@@ -92,7 +92,7 @@ def calculatePD(gradient, RGB, name):
     """
 
     fig,_ = colour.plotting.plot_multi_colour_swatches(
-        [colour.plotting.ColourSwatch(RGB=np.clip(x, 0, 1)) for x in RGB], height = int(len(gradient)/discretization))
+        [colour.plotting.ColourSwatch(RGB=np.clip(x, 0, 1)) for x in RGB], height = 2*int(len(gradient)/discretization))
     
     ax = fig.add_subplot(212)
 
