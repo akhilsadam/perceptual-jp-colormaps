@@ -31,6 +31,7 @@ ruri_iro = rgb(58,36,59)
 rurikon = rgb(27, 41, 75)
 konjo_iro = rgb(0, 49, 113)
 aoi = rgb(0, 0, 200)
+sabi_asagi = rgb(106,127,122)
 omeshi_onando = rgb(61, 76, 81)
 tetsuonando = rgb(43, 55, 54)
 mo_egi = rgb(91,137,48)
@@ -73,6 +74,7 @@ cmaps = \
     # 'ete' : [],
     # 'automne' : [],
     # 'hiver' : [],
+    'ice'   : [aijiro,gunjo_iro,mizu_iro,sora_iro,sabi_asagi,omeshi_onando],
     'water' : [gunjo_iro,mizu_iro,seiji_iro],
     'momiji': [sakuranezumi,ginshu,azuki_iro,enji_iro],
     'sky' : [kokushoku,kokimurasaki,sora_iro,aijiro],

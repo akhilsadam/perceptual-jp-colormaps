@@ -37,6 +37,7 @@ load colormaps:
 ## gallery  
 
 ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/ice.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/ice_segmented.png?raw=true)  
 ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/water.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/water_segmented.png?raw=true)  
 ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/momiji.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/momiji_segmented.png?raw=true)  
 ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky_segmented.png?raw=true)  
