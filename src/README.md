@@ -28,8 +28,7 @@ expected to work on:
 - MacOS  
   
 install:
-- pip3 install jpcm
-or download source
+- `pip3 install jpcm` or download source
 
 run generator:   
 - to create your own colormaps 
@@ -52,12 +51,12 @@ load colormaps:
 
 ## gallery  
 
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/def_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/ice.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/ice_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/iron-ice.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/iron-ice_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/water.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/water_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/momiji.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/momiji_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sky_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sunburst.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/sunburst_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/flamingo.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/flamingo_segmented.png?raw=true)  
-![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/tree.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master//maps/tree_segmented.png?raw=true)
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/def.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/def_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/ice.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/ice_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/iron-ice.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/iron-ice_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/water.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/water_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/momiji.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/momiji_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/sky.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/sky_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/sunburst.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/sunburst_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/flamingo.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/flamingo_segmented.png?raw=true)  
+![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/tree.png?raw=true) ![](https://github.com/akhilsadam/perceptual-jp-colormaps/blob/master/src/jpcm/maps/tree_segmented.png?raw=true)

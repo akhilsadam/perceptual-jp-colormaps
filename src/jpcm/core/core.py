@@ -2,7 +2,6 @@
 # inspired / based on https://stackoverflow.com/questions/61487041/more-perceptually-uniform-colormaps
 import matplotlib
 from sympy import true
-matplotlib.use('agg')
 from matplotlib import pyplot as plt
 import logging
 import colour
@@ -146,7 +145,10 @@ def gen_cmaps(cmaps,memory_only = True):
             # logger.debug("Perceptual:{}".format(x))
             # logger.debug("RGB:{}".format(RGB))
 
-            if not memory_only: calculatePD(gradient, RGB, name).savefig(maps.path+key+options+".png",bbox_inches='tight')
+            if not memory_only: 
+                fig = calculatePD(gradient, RGB, name)
+                fig.savefig(maps.path+key+options+".png",bbox_inches='tight')
+                plt.close()
 
             mapdata[name] = RGB.tolist()
        

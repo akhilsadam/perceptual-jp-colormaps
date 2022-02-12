@@ -2,6 +2,7 @@ import numpy as np
 
 segmentOPT="_segmented"
 path0 = "maps/"
+path1 = f'src/jpcm/{path0}'
 path = f'../{path0}'
 suffix = ".png"
 

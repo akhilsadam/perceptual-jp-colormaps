@@ -33,8 +33,7 @@ expected to work on:
 - MacOS  
   
 install:
-- pip3 install jpcm
-or download source
+- `pip3 install jpcm` or download source
 
 run generator:   
 - to create your own colormaps 
@@ -61,7 +60,7 @@ load colormaps:
 def generate():
     lines = []
     for key in cmaps.keys():
-        names = ["/"+path0+key+suffix,"/"+path0+key+segmentOPT+suffix]
+        names = [path1+key+suffix,path1+key+segmentOPT+suffix]
         imagenames = ["https://github.com/{}/{}/blob/{}/{}?raw=true".format(uname,rname,branch,name) for name in names]
         line = "\n![]("+"{}".format(imagenames[0])+") ![]("+"{}".format(imagenames[1])+")"
         lines.append(line)
