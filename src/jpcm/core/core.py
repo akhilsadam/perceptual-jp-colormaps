@@ -10,9 +10,9 @@ import numpy as np
 import json as js
 from scipy.interpolate import CubicSpline,interp1d
 from pynverse import inversefunc
-from savitzky_golay import savitzky_golay
-import maps
-import readme
+# from savitzky_golay import savitzky_golay
+import jpcm.core.maps as maps
+import jpcm.core.readme as readme
 
 prefix = "jp-cm-"
 defaultdatafile = f'{maps.path}cmaps.txt'
@@ -27,9 +27,9 @@ spline_mode = 'natural' # ['natural','clamped','not-a-knot'] (in best-to-worst o
 
 n_iterations = 1 # number of adjustments # note >1 values cause divergence!
 
-logging.basicConfig(filename=f'{maps.path}log.txt')
-logging.getLogger('matplotlib.font_manager').disabled = True
-logger = logging.getLogger(__name__)
+# logging.basicConfig(filename=f'{maps.path}log.txt')
+# logging.getLogger('matplotlib.font_manager').disabled = True
+# logger = logging.getLogger(__name__)
 # logger.level=logging.DEBUG
 
 def linear_segmented_spline(x):
@@ -143,8 +143,8 @@ def gen_cmaps(cmaps,memory_only = True):
             gradient = linear_segmented_spline(x) if segmented else smooth_spline(np.array(x))
             RGB = colour.convert(gradient, colorModel, outputColorModel)
 
-            logger.debug("Perceptual:{}".format(x))
-            logger.debug("RGB:{}".format(RGB))
+            # logger.debug("Perceptual:{}".format(x))
+            # logger.debug("RGB:{}".format(RGB))
 
             if not memory_only: calculatePD(gradient, RGB, name).savefig(maps.path+key+options+".png",bbox_inches='tight')
 

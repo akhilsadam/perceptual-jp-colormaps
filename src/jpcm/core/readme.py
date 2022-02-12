@@ -1,4 +1,4 @@
-from maps import *
+from jpcm.core.maps import *
 readmefile = "../../README.md"
 uname='akhilsadam'
 rname='perceptual-jp-colormaps'
@@ -33,7 +33,7 @@ expected to work on:
 - MacOS  
   
 install:
-- pip3 install jpcm  (not available yet)
+- pip3 install jpcm
 or download source
 
 run generator:   
@@ -51,7 +51,7 @@ run generator:
 
 load colormaps:
 - `import jpcm`  
-- `jpcm.load(<filename>)` will return a dictionary containing all the colormaps in the file at <filename>. 
+- `jpcm.open(<filename>)` will return a dictionary containing all the colormaps in the file at <filename>. 
 - Note the file should be of the same type as the generated 'cmap.txt' from the generator
 
 

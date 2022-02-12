@@ -2,7 +2,6 @@ from matplotlib.colors import ListedColormap as LCM
 import matplotlib as mpl
 import numpy as np
 import json as js
-from maps import path
 
 rev = "_rev"
 
@@ -18,6 +17,6 @@ def jpcm_load(datafile):
 
 def jpcm_register(jpcm_cmaps):
     for key in jpcm_cmaps.keys():
-        mpl.colormaps.register(jpcm_cmaps[key])
+        mpl.colormaps.register(jpcm_cmaps[key],name = key)
 
 
