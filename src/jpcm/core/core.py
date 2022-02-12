@@ -133,7 +133,7 @@ def draw(gradient, RGB, name):
     ax3 = fig.add_axes([1.0, 0.1, 0.5, 0.5], projection="3d")
     ax3.set(xlim3d=(0, 1), xlabel='L')
     ax3.set(ylim3d=(-0.5, 0.5),ylabel='M')#ylim3d=(0, 1),
-    ax3.set(ylim3d=(-0.5, 0.5), zlabel='S') # zlim3d=(0, 1),
+    ax3.set(zlim3d=(-0.5, 0.5), zlabel='S') # zlim3d=(0, 1),
     ax3.scatter(gradient[:,0],gradient[:,1],gradient[:,2],c=list(range(gradient.shape[0])),cmap=cmap)
     ax3.set_facecolor(maps.transparent)
     ax3.xaxis.pane.fill = False
