@@ -6,21 +6,6 @@ jpcm | perceptual-jp-colormaps
 A perceptually uniform colormap generator for Matplotlib equipped with traditional-ish Japanese colors to serve as a fixed color palette.
 """
 
-__version__ = "0.0.0"
-__author__ = 'Akhil Sadam'
-
-from setuptools import setup, find_packages
-
-setup(
-    name='jpcm',
-    version='0.0.0',
-    author = 'Akhil Sadam',
-    author_email = 'sadam.akhil@gmail.com',
-    url = 'https://github.com/akhilsadam/perceptual-jp-colormaps'
-)
-
-
-
 import core,load,core.maps
 
 def register(custom_maps=None,datafile=None):
