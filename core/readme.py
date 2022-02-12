@@ -37,9 +37,9 @@ install:
 or download source
 
 run generator:   
-- to create your own colormaps
- -- as a package:
-  --- `import jpcm` 
+- to create your own colormaps 
+- - as a package:  
+ - `import jpcm` 
   --- `jpcm.register()` will register all default colormaps and any additional ones via the optional `custom_maps` argument. 
   Note any custom_maps should be of the following format (note the RGB key colors):  
     cmaps = {
