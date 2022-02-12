@@ -32,12 +32,28 @@ expected to work on:
 - Linux  
 - MacOS  
   
+install:
+- pip3 install jpcm  (not available yet)
+or download source
+
 run generator:   
-- `python3 gen.py` or `python3 gen.py --readme`
+- to create your own colormaps
+ -- as a package:
+  --- `import jpcm` 
+  --- `jpcm.register()` will register all default colormaps and any additional ones via the optional `custom_maps` argument. 
+  Note any custom_maps should be of the following format (note the RGB key colors):  
+    cmaps = {
+        'def' : [[0,0,0],[255,0,0]],
+    }
+  The optional `datafile` argument will cause jpcm to save all colormaps to that location as well.
+ -- directly via code:
+  --- edit maps.py with your preferred cmap styles, and run `python3 gen.py` or `python3 gen.py --readme` from `/gen/`
 
 load colormaps:
-- add load.py and the maps/cmaps.txt to your code.
-- load.jpcm_load() will return a dictonary containing all the colormaps
+- `import jpcm`  
+- `jpcm.load(<filename>)` will return a dictionary containing all the colormaps in the file at <filename>. 
+Note the file should be of the same type as the generated 'cmap.txt' from the generator
+
 
 ## gallery  
 """

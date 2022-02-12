@@ -1,5 +1,6 @@
 # inspired / based on https://stackoverflow.com/questions/61487041/more-perceptually-uniform-colormaps
 import matplotlib
+from sympy import true
 matplotlib.use('agg')
 from matplotlib import pyplot as plt
 import logging
@@ -10,11 +11,11 @@ import sys
 from scipy.interpolate import CubicSpline,interp1d
 from pynverse import inversefunc
 from savitzky_golay import savitzky_golay
-from maps import *
+import maps
 import readme
 
 prefix = "jp-cm-"
-datafile = f'{path}cmaps.txt'
+defaultdatafile = f'{maps.path}cmaps.txt'
 discretization = 40
 
 baseColorSpace = "sRGB"
@@ -26,7 +27,7 @@ spline_mode = 'natural' # ['natural','clamped','not-a-knot'] (in best-to-worst o
 
 n_iterations = 1 # number of adjustments # note >1 values cause divergence!
 
-logging.basicConfig(filename=f'{path}log.txt')
+logging.basicConfig(filename=f'{maps.path}log.txt')
 logging.getLogger('matplotlib.font_manager').disabled = True
 logger = logging.getLogger(__name__)
 # logger.level=logging.DEBUG
@@ -71,6 +72,9 @@ def smooth_spline(x):
     return adjusted
 
 def adjust_spline(naive,naive_xs, n_keypoints):
+    """
+    Adjust spline speed along curve to force perceptual derivative to zero.
+    """
     _,local_derivs = fitD(naive)
     difficulty = np.cumsum(local_derivs)
     stepDiff = difficulty[len(difficulty)-1] / (n_keypoints-1)
@@ -101,7 +105,7 @@ def calculatePD(gradient, RGB, name):
 
     local_deltas,local_derivs = fitD(gradient)
 
-    ax.plot(local_derivs,c=ginshu)
+    ax.plot(local_derivs,c=maps.ginshu)
     arclength = np.sum(local_deltas)
     rmse = np.std(local_derivs)
     ax.text(0.1,0.4,"Perceptual Derivative for Colormap : {}".format(name),transform=ax.transAxes)
@@ -111,41 +115,50 @@ def calculatePD(gradient, RGB, name):
     ax.set_ylim(0, delta_ymax(local_derivs))
     ax.get_xaxis().set_visible(False)
     ax.margins(0.0)
-    ax.set_facecolor(aijiro_alpha)
+    ax.set_facecolor(maps.aijiro_alpha)
     ax.set_aspect(n_keys*8/delta_ymax(local_derivs))
-    fig.patch.set_facecolor(transparent)
+    fig.patch.set_facecolor(maps.transparent)
     return fig
 
-def gen_cmaps(cmaps,segmented=False):
+def gen_cmaps(cmaps,memory_only = True):
     """
     Create colormaps and save individual image as png, and all maps to txt.
-    args:   map (dict), segmented (bool) : colormap style
+    args:   map (dict) : colormap dictionary, memory_only (bool) : save flag for colormap details
     out:    ../maps/maps.txt
             ../maps/<name>.png
     """
-    options = segmentOPT if segmented else ""
+    
 
     mapdata = {}
-    for key in cmaps.keys():
 
-        name = prefix+key+options
+    for i in range(2):
+        segmented = (i==0)
+        options = maps.segmentOPT if segmented else ""
 
-        x = colour.convert(cmaps[key], 'Output-Referred RGB', colorModel)
-        gradient = linear_segmented_spline(x) if segmented else smooth_spline(np.array(x))
-        RGB = colour.convert(gradient, colorModel, outputColorModel)
+        for key in cmaps.keys():
 
-        logger.debug("Perceptual:{}".format(x))
-        logger.debug("RGB:{}".format(RGB))
+            name = prefix+key+options
 
-        calculatePD(gradient, RGB, name).savefig(path+key+options+".png",bbox_inches='tight')
+            x = colour.convert(cmaps[key], 'Output-Referred RGB', colorModel)
+            gradient = linear_segmented_spline(x) if segmented else smooth_spline(np.array(x))
+            RGB = colour.convert(gradient, colorModel, outputColorModel)
 
-        mapdata[name] = RGB.tolist()
+            logger.debug("Perceptual:{}".format(x))
+            logger.debug("RGB:{}".format(RGB))
+
+            if not memory_only: calculatePD(gradient, RGB, name).savefig(maps.path+key+options+".png",bbox_inches='tight')
+
+            mapdata[name] = RGB.tolist()
+       
+
+    return mapdata
+
+def save(mapdata,datafile=defaultdatafile):
     with open(datafile, 'w') as file:
         file.write(js.dumps(mapdata))
 
 def core():
-    gen_cmaps(cmaps)
-    gen_cmaps(cmaps,True)
+    save(gen_cmaps(maps.cmaps, memory_only = False))
     if "--readme" in sys.argv:
         readme.generate()
     # gen_cmaps(cmaps,("--segmented" in sys.argv))
