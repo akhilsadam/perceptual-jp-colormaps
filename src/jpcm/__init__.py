@@ -6,7 +6,9 @@ jpcm | perceptual-jp-colormaps
 A perceptually uniform colormap generator for Matplotlib equipped with traditional-ish Japanese colors to serve as a fixed color palette.
 """
 
-import core,load,core.maps
+import jpcm.core.core as core
+import jpcm.load as load
+import jpcm.core.maps as maps
 
 def register(custom_maps=None,datafile=None):
     """
@@ -14,13 +16,13 @@ def register(custom_maps=None,datafile=None):
     args: custom_maps (dict) : colormap dictionary of keycolors, datafile (str) : file path to save at 
     """
     cmaps = {}
-    cmaps.append(core.maps.cmaps)
+    cmaps.append(maps.cmaps)
     if datafile is not None: cmaps.append(custom_maps)
-    mapdata = core.core.gen_cmaps(cmaps, memory_only = True)
+    mapdata = core.gen_cmaps(cmaps, memory_only = True)
     load.jpcm_register(mapdata)
-    if datafile is not None: core.core.save(mapdata,datafile)
+    if datafile is not None: core.save(mapdata,datafile)
 
-def load(datafile = f'{core.maps.path}cmaps.txt'):
+def load(datafile = f'{maps.path}cmaps.txt'):
     """
     registers colormaps given by datafile
     args: datafile (str) : file path containing colormap data
