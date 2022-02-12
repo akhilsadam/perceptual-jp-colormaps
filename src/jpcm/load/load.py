@@ -1,3 +1,4 @@
+import matplotlib
 from matplotlib.colors import ListedColormap as LCM
 import matplotlib as mpl
 import numpy as np
@@ -14,7 +15,8 @@ def jpcm_load(datafile):
 
 def jpcm_register(jpcm_cmaps):
     for key in jpcm_cmaps.keys():
-        mpl.colormaps.register(LCM(jpcm_cmaps[key]),name = key)
-        mpl.colormaps.register(np.flip(LCM(jpcm_cmaps[key]),axis=0),name = key+rev)
+        if key not in matplotlib.pyplot.colormaps():
+            mpl.colormaps.register(LCM(jpcm_cmaps[key]),name = key)
+            mpl.colormaps.register(np.flip(LCM(jpcm_cmaps[key]),axis=0),name = key+rev)
 
 

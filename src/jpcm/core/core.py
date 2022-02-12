@@ -2,8 +2,10 @@
 # inspired / based on https://stackoverflow.com/questions/61487041/more-perceptually-uniform-colormaps
 import matplotlib
 matplotlib.use('agg')
-from sympy import true
 from matplotlib import pyplot as plt
+from matplotlib.colors import ListedColormap as LCM
+from matplotlib.colors import Normalize as mplnorm
+import matplotlib.cm as cm
 import logging
 import colour
 import numpy as np
@@ -92,16 +94,18 @@ def fitD(gradient):
     local_derivs = (len(local_deltas)-1)*local_deltas
     return local_deltas,local_derivs
 
-def calculatePD(gradient, RGB, name):
+def colormap(gradient, RGB, name):
     """
-    Calculate and plot colormap with perceptual derivative.
+    Calculate and plot colormap with perceptual derivative. Returns matplotlib colormap.
     """
     n_keys = int(len(gradient)/discretization)
 
     fig,_ = colour.plotting.plot_multi_colour_swatches(
         [colour.plotting.ColourSwatch(RGB=np.clip(x, 0, 1)) for x in RGB], height = 2*n_keys)
     
-    ax = fig.add_subplot(212)
+    ax = fig.add_subplot(212)  
+
+    cmap = LCM(RGB,name=name)
 
     local_deltas,local_derivs = fitD(gradient)
 
@@ -114,11 +118,32 @@ def calculatePD(gradient, RGB, name):
     # print("Perceptual derivative: %0.5f +/- %0.5f" % (arclength, rmse))
     ax.set_ylim(0, delta_ymax(local_derivs))
     ax.get_xaxis().set_visible(False)
-    ax.margins(0.0)
+    ax.margins(0,0)
     ax.set_facecolor(maps.aijiro_alpha)
-    ax.set_aspect(n_keys*8/delta_ymax(local_derivs))
     fig.patch.set_facecolor(maps.transparent)
+    ax.set_aspect(n_keys*8/delta_ymax(local_derivs))
+    return cmap,fig
+
+def draw(gradient, RGB, name):
+    # fig = plt.figure(constrained_layout=True, figsize=(10, 4))
+    # fig.patch.set_facecolor(maps.transparent)
+    # subfigs = fig.subfigures(1,2, wspace=0.00, hspace=0.00,width_ratios=[2, 1])
+    # for subfig in subfigs : subfig.set_facecolor(maps.transparent)
+    cmap,fig = colormap(gradient, RGB, name)
+    ax3 = fig.add_axes([1.0, 0.1, 0.5, 0.5], projection="3d")
+    ax3.set(xlim3d=(0, 1), xlabel='L')
+    ax3.set(ylim3d=(-0.5, 0.5),ylabel='M')#ylim3d=(0, 1),
+    ax3.set(ylim3d=(-0.5, 0.5), zlabel='S') # zlim3d=(0, 1),
+    ax3.scatter(gradient[:,0],gradient[:,1],gradient[:,2],c=list(range(gradient.shape[0])),cmap=cmap)
+    ax3.set_facecolor(maps.transparent)
+    ax3.xaxis.pane.fill = False
+    ax3.yaxis.pane.fill = False
+    ax3.zaxis.pane.fill = False
+    ax3.xaxis.pane.set_edgecolor(maps.aijiro_alpha)
+    ax3.yaxis.pane.set_edgecolor(maps.aijiro_alpha)
+    ax3.zaxis.pane.set_edgecolor(maps.aijiro_alpha)
     return fig
+
 
 def gen_cmaps(cmaps,memory_only = True):
     """
@@ -141,13 +166,13 @@ def gen_cmaps(cmaps,memory_only = True):
 
             x = colour.convert(cmaps[key], 'Output-Referred RGB', colorModel)
             gradient = linear_segmented_spline(x) if segmented else smooth_spline(np.array(x))
-            RGB = colour.convert(gradient, colorModel, outputColorModel)
+            RGB = np.array([np.clip(x, 0, 1) for x in colour.convert(gradient, colorModel, outputColorModel)])
 
             # logger.debug("Perceptual:{}".format(x))
             # logger.debug("RGB:{}".format(RGB))
 
             if not memory_only: 
-                fig = calculatePD(gradient, RGB, name)
+                fig = draw(gradient, RGB, name)
                 fig.savefig(maps.path+key+options+".png",bbox_inches='tight')
                 plt.close()
 
