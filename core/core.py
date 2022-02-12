@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # inspired / based on https://stackoverflow.com/questions/61487041/more-perceptually-uniform-colormaps
 import matplotlib
 from sympy import true

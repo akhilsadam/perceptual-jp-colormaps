@@ -1,4 +1,4 @@
-#jpcm
+#!/usr/bin/env python3
 
 """
 jpcm | perceptual-jp-colormaps  
@@ -9,8 +9,19 @@ A perceptually uniform colormap generator for Matplotlib equipped with tradition
 __version__ = "0.0.0"
 __author__ = 'Akhil Sadam'
 
+from setuptools import setup, find_packages
 
-import core,load
+setup(
+    name='jpcm',
+    version='0.0.0',
+    author = 'Akhil Sadam',
+    author_email = 'sadam.akhil@gmail.com',
+    url = 'https://github.com/akhilsadam/perceptual-jp-colormaps'
+)
+
+
+
+import core,load,core.maps
 
 def register(custom_maps=None,datafile=None):
     """
