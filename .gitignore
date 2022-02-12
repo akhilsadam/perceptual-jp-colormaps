@@ -1,7 +1,3 @@
-cmaps.txt
-maps/log.txt
-__pycache__
-gen/__pycache__
-load/__pycache__
-dist/
 jpcm.egg-info
+dist
+maps

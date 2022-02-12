@@ -8,7 +8,6 @@ import logging
 import colour
 import numpy as np
 import json as js
-import sys
 from scipy.interpolate import CubicSpline,interp1d
 from pynverse import inversefunc
 from savitzky_golay import savitzky_golay
@@ -160,8 +159,7 @@ def save(mapdata,datafile=defaultdatafile):
 
 def core():
     save(gen_cmaps(maps.cmaps, memory_only = False))
-    if "--readme" in sys.argv:
-        readme.generate()
+    readme.generate()
     # gen_cmaps(cmaps,("--segmented" in sys.argv))
 
 if __name__=='__main__':

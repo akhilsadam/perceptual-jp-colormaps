@@ -1,5 +1,5 @@
 from maps import *
-readmefile = "../README.md"
+readmefile = "../../README.md"
 uname='akhilsadam'
 rname='perceptual-jp-colormaps'
 branch='master'

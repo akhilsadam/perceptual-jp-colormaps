@@ -1,0 +1,12 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "colour-science",
+	"numpy",  
+	"logging",  
+	"scipy",    
+	"pynverse",  
+	"matplotlib",  
+]
+build-backend = "setuptools.build_meta"
