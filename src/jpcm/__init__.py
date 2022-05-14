@@ -5,7 +5,7 @@ jpcm | perceptual-jp-colormaps
   
 A perceptually uniform colormap generator for Matplotlib equipped with traditional-ish Japanese colors to serve as a fixed color palette.
 """
-
+from matplotlib.colors import ListedColormap as LCM
 import jpcm.core.core as core
 import jpcm.load.load as load
 import jpcm.core.maps as maps
@@ -28,3 +28,8 @@ def open(datafile = f'{maps.path}cmaps.txt'):
     args: datafile (str) : file path containing colormap data
     """
     load.jpcm_register(load.jpcm_load(datafile))
+
+#mainly for MATPLOTLIB 3.3/3.4
+def get(key,segmented = False,cmaps=maps.cmaps):
+    RGB,_ = core.get(key,segmented = False,cmaps=maps.cmaps)
+    return LCM(RGB.tolist())

@@ -33,6 +33,7 @@ rurikon = rgb(27, 41, 75)
 konjo_iro = rgb(0, 49, 113)
 aoi = rgb(0, 0, 200)
 sabi_asagi = rgb(106,127,122)
+mizu_asagi = rgb(116,159,141)
 omeshi_onando = rgb(61, 76, 81)
 tetsuonando = rgb(43, 55, 54)
 mo_egi = rgb(91,137,48)
@@ -70,7 +71,7 @@ cmaps = \
     # 'haru' : [],    # warm, bright light : orange, yellow, coral pink, warms
     # 'natsu' : [],   # cool, muted light  : blue-based pink, soft purple, greyed blues, pastels
     # 'aki' : [],     # warm, muted dark   : warm browns, olive/moss greens, teracotta orange, muted reds
-    # 'fuyu' : [],    # cool, bright dark  : bright red, dark pink, black, white
+    'fuyu' : [aijiro,gunjo_iro,mizu_iro,akabeni,murasaki,kokushoku],    # cool, bright dark  : bright red, dark pink, black, white
     # 'printemps' : [],
     # 'ete' : [],
     # 'automne' : [],
@@ -81,7 +82,7 @@ cmaps = \
     'momiji': [sakuranezumi,ginshu,azuki_iro,enji_iro],
     'sky' : [kokushoku,kokimurasaki,sora_iro,aijiro],
     # inspired by cmasher (https://cmasher.readthedocs.io/)
-    'sunburst' : [kokushoku,enji_iro,akabeni,tomorokoshi_iro,mashiro],
+    'sunburst' : [kokushoku,enji_iro,akabeni,tomorokoshi_iro,zoge_iro],
     'flamingo' : [kokushoku,shinshu,nakabeni,aijiro],
     'tree'     : [kokushoku,benihibata,mo_egi]
 

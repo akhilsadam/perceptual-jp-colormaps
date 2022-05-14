@@ -144,6 +144,11 @@ def draw(gradient, RGB, name):
     ax3.zaxis.pane.set_edgecolor(maps.aijiro_alpha)
     return fig
 
+def get(key,segmented = False,cmaps=maps.cmaps):
+        x = colour.convert(cmaps[key], 'Output-Referred RGB', colorModel)
+        gradient = linear_segmented_spline(x) if segmented else smooth_spline(np.array(x))
+        RGB = np.array([np.clip(x, 0, 1) for x in colour.convert(gradient, colorModel, outputColorModel)])
+        return RGB, gradient
 
 def gen_cmaps(cmaps,memory_only = True):
     """
@@ -164,9 +169,7 @@ def gen_cmaps(cmaps,memory_only = True):
 
             name = prefix+key+options
 
-            x = colour.convert(cmaps[key], 'Output-Referred RGB', colorModel)
-            gradient = linear_segmented_spline(x) if segmented else smooth_spline(np.array(x))
-            RGB = np.array([np.clip(x, 0, 1) for x in colour.convert(gradient, colorModel, outputColorModel)])
+            RGB,gradient = get(key,segmented,cmaps)
 
             # logger.debug("Perceptual:{}".format(x))
             # logger.debug("RGB:{}".format(RGB))
