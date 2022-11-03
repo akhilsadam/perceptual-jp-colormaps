@@ -8,6 +8,7 @@ from matplotlib.colors import Normalize as mplnorm
 import matplotlib.cm as cm
 import logging
 import colour
+colour.utilities.filter_warnings(*[True] * 4)
 import numpy as np
 import json as js
 from scipy.interpolate import CubicSpline,interp1d
@@ -102,7 +103,7 @@ def colormap(gradient, RGB, name):
 
     fig,_ = colour.plotting.plot_multi_colour_swatches(
         [colour.plotting.ColourSwatch(RGB=np.clip(x, 0, 1)) for x in RGB], height = 2*n_keys)
-    
+
     ax = fig.add_subplot(212)  
 
     cmap = LCM(RGB,name=name)
@@ -112,7 +113,8 @@ def colormap(gradient, RGB, name):
     ax.plot(local_derivs,c=maps.ginshu)
     arclength = np.sum(local_deltas)
     rmse = np.std(local_derivs)
-    ax.text(0.1,0.4,"Perceptual Derivative for Colormap : {}".format(name),transform=ax.transAxes)
+    ax.text(0.1, 0.4, f"Perceptual Derivative for Colormap : {name}", transform=ax.transAxes)
+
     ax.text(0.1,0.1,"Length: %0.1f\nRMS deviation from flat: %0.1f (%0.1f%%)"
             % (arclength, rmse, 100*rmse / arclength),transform=ax.transAxes)
     # print("Perceptual derivative: %0.5f +/- %0.5f" % (arclength, rmse))
