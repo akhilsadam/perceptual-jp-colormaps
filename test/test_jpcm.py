@@ -22,4 +22,4 @@ def test_jpcm_register():
     """
     Test that the jpcm package can be loaded.
     """
-    assert jpcm.register()
+    jpcm.register()

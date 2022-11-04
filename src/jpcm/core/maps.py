@@ -88,17 +88,8 @@ cmaps = \
         'sunburst': [kokushoku, enji_iro, akabeni, tomorokoshi_iro, zoge_iro],
         'flamingo': [kokushoku, shinshu, nakabeni, aijiro],
         'tree': [kokushoku, benihibata, mo_egi],
-        # ai generated
-        'ocean': [kokushoku, omeshi_onando, mizu_asagi],
-        'forest': [kokushoku, omeshi_onando, seiji_iro],
-        'desert': [kokushoku, benihibata, mo_egi, tomorokoshi_iro],
-        'mountain': [kokushoku, benihibata, mo_egi, tetsuonando],
-        'river': [kokushoku, benihibata, mo_egi, ruri_iro],
-        'lake': [kokushoku, benihibata, mo_egi, mizu_asagi],
-        'skytree': [kokushoku, omeshi_onando, konjo_iro, aoi],
+        # nature
+        'ocean': [kokushoku, gunjo_iro, omeshi_onando, mizu_asagi],
+        'desert': [kokushoku, benihibata, akabeni, tomorokoshi_iro],
         'fire':  [kokushoku, akabeni, sakuranezumi],
-        'wind': [kokushoku, kokimurasaki, ruri_iro],
-        'rain': [kokushoku, kokimurasaki, ruri_iro, mizu_asagi],
-        # utility
-        'paired': [rurikon, chigusa_iro, benimidori, azuki_iro],
     }
