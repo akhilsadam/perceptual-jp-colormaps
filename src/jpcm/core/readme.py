@@ -61,9 +61,10 @@ def generate():
     lines = []
     for key in cmaps.keys():
         names = [path1+key+suffix,path1+key+segmentOPT+suffix]
-        imagenames = ["https://github.com/{}/{}/blob/{}/{}?raw=true".format(uname,rname,branch,name) for name in names]
-        line = "\n![]("+"{}".format(imagenames[0])+") ![]("+"{}".format(imagenames[1])+")"
+        imagenames = [f"https://github.com/{uname}/{rname}/blob/{branch}/{name}?raw=true" for name in names]
+
+        line = "\n![](" + f"{imagenames[0]}" + ") ![](" + f"{imagenames[1]}" + ")"
         lines.append(line)
-    readmeHT = readme + "  ".join(lines)  
+    readmeHT = readme + "  ".join(lines)
     with open(readmefile, 'w') as file:
         file.write(readmeHT)
