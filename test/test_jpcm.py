@@ -1,7 +1,8 @@
 import pytest
 import jpcm
 import matplotlib.pyplot as plt
-import matplotlib.cm.listedcolormap as LCM
+from matplotlib.colors import ListedColormap as LCM
+
 
 def test_jpcm_load():
     """
@@ -9,11 +10,13 @@ def test_jpcm_load():
     """
     assert jpcm
 
+
 def test_jpcm_get():
     """
     Test that the jpcm package can be loaded.
     """
-    assert isinstance(jpcm.get("def"),LCM)
+    assert isinstance(jpcm.get("def"), LCM)
+
 
 def test_jpcm_register():
     """
