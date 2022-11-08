@@ -4,7 +4,7 @@ import matplotlib as mpl
 import numpy as np
 import json as js
 
-rev = "_rev"
+rev = "_r"
 
 def jpcm_load(datafile):
 

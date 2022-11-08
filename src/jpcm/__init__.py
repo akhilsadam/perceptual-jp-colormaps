@@ -17,7 +17,7 @@ def register(custom_maps=None,datafile=None):
     """
     cmaps = {}
     cmaps.update(maps.cmaps)
-    if datafile is not None: cmaps.update(custom_maps)
+    if custom_maps is not None: cmaps.update(custom_maps)
     mapdata = core.gen_cmaps(cmaps, memory_only = True)
     load.jpcm_register(mapdata)
     if datafile is not None: core.save(mapdata,datafile)
