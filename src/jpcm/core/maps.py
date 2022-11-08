@@ -93,3 +93,11 @@ cmaps = \
         'desert': [kokushoku, benihibata, akabeni, tomorokoshi_iro],
         'fire':  [kokushoku, akabeni, sakuranezumi],
     }
+
+vs = vars()
+colors = [v for v in vs if v not in ['np', 'segmentOPT', 'path0', 'path1', 'path', 'suffix', 'cmaps', 'rgb'] and v[0] != '_' ]
+# print(colors)
+solids = [c for c in colors if len(vs[c])==3]
+cv = np.array([vs[c] for c in solids]).reshape((len(solids),3))
+
+# print(cv[:5,:])
