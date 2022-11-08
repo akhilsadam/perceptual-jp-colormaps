@@ -7,6 +7,7 @@ A perceptually uniform colormap generator for Matplotlib equipped with tradition
 """
 from matplotlib.colors import ListedColormap as LCM
 import jpcm.core.core as core
+import jpcm.core.utils as ul
 import jpcm.load.load as load
 import jpcm.core.maps as maps
 
