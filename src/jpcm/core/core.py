@@ -15,7 +15,7 @@ from scipy.interpolate import CubicSpline,interp1d
 from pynverse import inversefunc
 # from savitzky_golay import savitzky_golay
 import jpcm.core.maps as maps
-import jpcm.core.readme as readme
+import readme as rm
 
 prefix = "jp-cm-"
 defaultdatafile = f'{maps.path}cmaps.txt'
@@ -190,10 +190,11 @@ def save(mapdata,datafile=defaultdatafile):
     with open(datafile, 'w') as file:
         file.write(js.dumps(mapdata))
 
-def core():
+def kore():
     save(gen_cmaps(maps.cmaps, memory_only = False))
-    readme.generate()
+    print(rm)
+    rm.generate()
     # gen_cmaps(cmaps,("--segmented" in sys.argv))
 
 if __name__=='__main__':
-    core()
+    kore()

@@ -1,18 +1,21 @@
 from jpcm.core.maps import *
-readmefile = "/../../../../README.md"
-uname='akhilsadam'
-rname='perceptual-jp-colormaps'
-branch='master'
+import os
+path = os.getcwd()
+readmefile = f"{path}/../../../README.md"
+uname = 'akhilsadam'
+rname = 'perceptual-jp-colormaps'
+branch = 'master'
 readme = """
 # perceptual-jp-colormaps  
   
 A perceptually uniform colormap generator for Matplotlib equipped with traditional-ish Japanese colors to serve as a fixed color palette.   
-(Culture appropriation at its finest.) Additions are welcomed.  
+Additions are welcome.  
+[![Python package](https://github.com/akhilsadam/perceptual-jp-colormaps/actions/workflows/python-package.yml/badge.svg)](https://github.com/akhilsadam/perceptual-jp-colormaps/actions/workflows/python-package.yml)
 
 Why perceptually uniform colormaps? Can you not just use default Matplotlib colormaps?   
 - non-perceptually uniform colormaps induce dangerous artifacts, as seen in the below image: ![top-view of pyramid](https://i.stack.imgur.com/JcTDb.png).
 The left colormap introduces new features to the data.
-- Matplotlib perceptually uniform colormaps are not visually appealing and sometimes lack enough contrast.
+- Matplotlib perceptually uniform colormaps are *simply not visually appealing* and sometimes lack enough contrast.
 With this package, anyone can design colormaps to fit their visual style.
 
 dependencies:  
@@ -60,10 +63,12 @@ load colormaps:
 def generate():
     lines = []
     for key in cmaps.keys():
-        names = [path1+key+suffix,path1+key+segmentOPT+suffix]
-        imagenames = [f"https://github.com/{uname}/{rname}/blob/{branch}/{name}?raw=true" for name in names]
+        names = [path1 + key + suffix, path1 + key + segmentOPT + suffix]
+        imagenames = [
+            f"https://github.com/{uname}/{rname}/blob/{branch}/{name}?raw=true" for name in names]
 
-        line = "\n![](" + f"{imagenames[0]}" + ") ![](" + f"{imagenames[1]}" + ")"
+        line = "\n![](" + f"{imagenames[0]}" + \
+            ") ![](" + f"{imagenames[1]}" + ")"
         lines.append(line)
     readmeHT = readme + "  ".join(lines)
     with open(readmefile, 'w') as file:
