@@ -39,7 +39,7 @@ jobs:
       run: |
         pytest test/test_jpcm.py
     - name: Publish to PyPi
-      if: success() && "!contains(github.event.head_commit.message, 'release')"
+      if: success() && !contains(github.event.head_commit.message, 'release')
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         username: __token__
