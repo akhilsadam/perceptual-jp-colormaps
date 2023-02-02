@@ -23,9 +23,8 @@ dependencies:
   
 tested on:  
 - Windows 10  
-  
-expected to work on:  
 - Linux  
+expected to work on:  
 - MacOS  
   
 install:
