@@ -24,9 +24,12 @@ dependencies:
 tested on:  
 - Windows 10  
 - Linux  
+- Python 3.10
+
 expected to work on:  
 - MacOS  
-  
+- all Python >=3.6 (support available for >=3.8)
+
 install:
 - `pip3 install jpcm` or download source
 
