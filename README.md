@@ -14,7 +14,7 @@ With this package, anyone can design colormaps to fit their visual style.
 dependencies:  
 - Python3:  
 --	colour-science  
---	numpy  
+--	numpy==1.23.4  
 --	logging  
 --	scipy  
 --	json  
