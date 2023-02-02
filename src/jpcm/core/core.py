@@ -15,7 +15,7 @@ from scipy.interpolate import CubicSpline,interp1d
 from pynverse import inversefunc
 # from savitzky_golay import savitzky_golay
 import jpcm.core.maps as maps
-import readme as rm
+import jpcm.core.readme as rm
 
 prefix = "jp-cm-"
 defaultdatafile = f'{maps.path}cmaps.txt'
