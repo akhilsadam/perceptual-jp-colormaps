@@ -42,6 +42,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test/test_jpcm.py
+    - name: Store the distribution packages
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-package-distributions
+        path: dist/
   publish:
       name: Publish to PyPi
       if: contains(github.event.head_commit.message, 'release')
