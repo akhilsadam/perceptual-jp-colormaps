@@ -42,7 +42,7 @@ def linear_segmented_spline(x):
     n_gradients = len(x) - 1
     RGB_list = []
     for i in range(n_gradients):
-        gradient = colour.utilities.lerp(
+        gradient = colour.algebra.lerp(
             x[i][np.newaxis],
             x[i+1][np.newaxis],
             np.linspace(0, 1, discretization)[..., np.newaxis])
