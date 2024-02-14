@@ -2,8 +2,8 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "colour-science==0.3.16",
-	"numpy==1.23.4",
+    "colour-science>=0.3.16",
+	"numpy>=1.23.4",
 	"scipy",    
 	"pynverse",  
 	"matplotlib>=3.3.4",
