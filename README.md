@@ -24,7 +24,7 @@ dependencies:
 tested on:  
 - Windows 10  
 - Linux  
-- Python 3.10
+- Python 3.8, 3.10, 3.12
 
 expected to work on:  
 - MacOS  

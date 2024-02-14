@@ -42,10 +42,26 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test/test_jpcm.py
-    - name: Publish to PyPi
-      if: success() && matrix.python-version == 3.10 && contains(github.event.head_commit.message, 'release')
-      uses: pypa/gh-action-pypi-publish@release/v1
-      continue-on-error: true
-      with:
-        username: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
+  publish:
+      name: Publish to PyPi
+      if: contains(github.event.head_commit.message, 'release')
+      needs:
+      - build
+      runs-on: ubuntu-latest
+      environment:
+        name: pypi
+        url: https://pypi.org/p/jpcm
+      permissions:
+        id-token: write  # IMPORTANT: mandatory for trusted publishing
+      steps:
+      - name: Download distributions
+        uses: actions/download-artifact@v3
+        with:
+          name: python-package-distributions
+          path: dist/
+      - name: Publish distribution
+        uses: pypa/gh-action-pypi-publish@release/v1
+        continue-on-error: true
+        with:
+          username: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
