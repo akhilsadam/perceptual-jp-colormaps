@@ -62,7 +62,7 @@ jobs:
       - name: Download distributions
         uses: actions/download-artifact@v4
         with:
-          name: python-package-distributions
+          name: python-package-distributions-${{ matrix.python-version }}
           path: dist/
       - name: Publish distribution
         uses: pypa/gh-action-pypi-publish@release/v1
