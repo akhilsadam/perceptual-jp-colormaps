@@ -10,10 +10,8 @@ import jpcm.core.maps as maps
 import jpcm.core.func as functions
 import jpcm.core.core as core
 import jpcm.load.load as load
+import jpcm.draw.draw as draw
 import jpcm.utils.utils as utils
-
-
-from jpcm.draw.static_plot import mp4
 
 def register(custom_maps=None,datafile=None):
     """
