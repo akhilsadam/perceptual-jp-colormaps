@@ -7,6 +7,9 @@ requires = [
 	"scipy",    
 	"pynverse",  
 	"matplotlib>=3.3.4",
-	"networkx>=2.5" 
+	"networkx>=2.5",
+	"ffmpeg-python",
+	"tqdm",
+	"einops"
 ]
 build-backend = "setuptools.build_meta"
