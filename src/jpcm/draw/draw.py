@@ -18,6 +18,23 @@ def fast_scandir(dirname):
         subfolders.extend(fast_scandir(dirname))
     return subfolders
 
+def ffmpeg_version(i=0):
+    if i > 1:
+        print("Warning: ffmpeg failed. Please ensure ffmpeg is installed and in your PATH.")
+        raise RuntimeError("ffmpeg not found")
+        return "unknown"
+    try:
+        out = os.popen('ffmpeg -version').readlines()[0]
+        version_line = out
+        version = version_line.split(' ')[2]
+        major_version = int(version.split('.')[0])
+        return major_version
+    except Exception as e:
+        print(f"Warning: failed to get ffmpeg version: {e}. Will install.")
+        os.system('sudo apt install ffmpeg')
+
+        return ffmpeg_version(i+1)
+
 def mp4(filename, d, fps=2, triplet=True, mn = None, cmap=cmap, clamp=1.0, time=False):
     """Saves a NumPy array of frames as an MP4 video."""
  
@@ -52,23 +69,63 @@ def mp4(filename, d, fps=2, triplet=True, mn = None, cmap=cmap, clamp=1.0, time=
     frames = nframes
     n, height, width = frames.shape
     print(frames.shape)
-    process = (
-        ffmpeg
-        .input('pipe:', format='rawvideo', pix_fmt='rgb24', s=f'{width}x{height}', framerate=fps)
-        .output(filename, pix_fmt='yuv420p', vcodec='libx264',
-        # r=fps,  # Set the frame rate
-        **{
-            # X264 encoder parameters (use "-x264-params" syntax)
-            'x264-params': 'keyint=1:qp=0:no-scenecut=1'
-        },
-        vsync='passthrough',  # Constant frame rate
-        # fps_mode='passthrough',  # Force constant frame rate
-        preset='ultrafast',      # Minimize CPU processing
-        tune='zerolatency'       # Disable lookahead
+    
+    ver = ffmpeg_version()
+    
+    fset = {
+        'vcodec': 'libx264',
+        'pix_fmt': 'yuv420p10le',
+        'crf': 9,
+        'g': 15,
+        'bf': 0,
+        'x264-params': 'scenecut=40'
+    }
+    
+    # Different encoder configurations for different ffmpeg versions
+    if ver >= 7:
+        # FFmpeg 7+ (newest)
+        process = (
+            ffmpeg
+            .input('pipe:', format='rawvideo', pix_fmt='rgb24', s=f'{width}x{height}', framerate=fps)
+            .output(filename,
+            **fset,
+            vsync='passthrough',
+            preset='ultrafast',
+            tune='zerolatency'
+            )
+            .overwrite_output()
+            .run_async(pipe_stdin=True)
         )
-        .overwrite_output()
-        .run_async(pipe_stdin=True)
-    )
+    elif ver >= 5:
+        # FFmpeg 5-6
+        process = (
+            ffmpeg
+            .input('pipe:', format='rawvideo', pix_fmt='rgb24', s=f'{width}x{height}', framerate=fps)
+            .output(filename, 
+            **fset,
+            vsync='cfr',
+            preset='ultrafast',
+            tune='zerolatency'
+            )
+            .overwrite_output()
+            .run_async(pipe_stdin=True)
+        )
+    else:
+        # FFmpeg 4
+        process = (
+            ffmpeg
+            .input('pipe:', format='rawvideo', pix_fmt='rgb24', s=f'{width}x{height}', framerate=fps)
+            .output(filename,
+            vsync='cfr',
+            preset='ultrafast',
+            tune='zerolatency',
+            **fset,
+            )
+            .overwrite_output()
+            .run_async(pipe_stdin=True)
+        )
+    
+    
     for frame in frames:
         cframe = cmap(frame)[...,:3] * 255
         process.stdin.write(cframe.astype(np.uint8).tobytes())
@@ -101,4 +158,4 @@ if __name__ == '__main__':
 # run this script with 
 # conda activate ./sw
 # source .venv/bin/activate
-# python3 src/ml/runners/basic_plot.pyWW
+# python3 src/ml/runners/basic_plot.py
